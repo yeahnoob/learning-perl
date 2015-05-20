@@ -1,0 +1,22 @@
+{
+    "uuid": "70cda80a-fef7-11e4-8f0f-002522cb006e-0123456789",  # 该份打印文件的唯一ID
+    "account": {
+        "username": "0123456789",  # 用户帐号
+        "name": "张三",  # 用户姓名
+        "time": "2001年01月01日 11:01:01",  # 文件有效起始日期
+        "operator": "Tom Hacks, 0001"  # 文件创立经办人的姓名和工号
+        },
+    "document": {
+        "type": "XXX合同",  # 文件类型
+        "head": "标题YYYYYYYYYY",
+        "body": [  # 文件正文全文内容或正文关键字列表
+            "Hell Wall",
+            "Everyone dislike GFW(Great FireWall)."
+        ],
+        "signature": "7e8789c0615aa6cefe9c5ba871eaed1ea5dc12d22d68d5ff8f0e15b2848375cf"  # 手写签名的图片检索id
+        },
+    "print_info": {  # 该份文件的打印信息
+        "time": "2015年03月30日 10:05:22", # 文件打印时间
+        "operator": "John Smith, 0150"  # 打印经办人的姓名和工号
+        }
+}

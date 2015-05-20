@@ -9,10 +9,12 @@ use autodie;
 use Crypt::Digest::SHA256;
 use Imager::QRCode;
 
+open my $frh, "<", $ARGV[0];
+
 my $d = Crypt::Digest::SHA256->new;
-$d->addfile('input.data');    # input the document
+$d->addfile($frh);    # input the document
 my $dhash = join '',
-  ( "http://192.168.0.120:8080/doc_checker/", $d->hexdigest );
+  ( "http://192.168.0.120:8080/doc/check?id=", $d->hexdigest );
 
 my $qrcode = Imager::QRCode->new(
     size          => 4,

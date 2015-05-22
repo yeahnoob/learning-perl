@@ -26,6 +26,6 @@ my $qrcode = Imager::QRCode->new(
     darkcolor     => Imager::Color->new( 0, 0, 0 ),
 );
 my $img = $qrcode->plot($dhash);
-$img->write( file => "output.qrcode.gif" );
+$img->write( file => "output.qrcode.png" );
 
 # no more

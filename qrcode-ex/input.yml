@@ -1,27 +1,92 @@
 {
-    "uuid": "70cda80a-fef7-11e4-8f0f-002522cb006e-0123456789",  # 该份打印文件的唯一ID
-    "account": {
-        "username": "0123456789",  # 用户帐号
-        "name": "张三",  # 用户姓名
-        "time": "2001年01月01日 11:01:01",  # 文件有效起始日期
-        "operator": "Tom Hacks, 0001"  # 文件创立经办人的姓名和工号
-        },
+    "uuid": "70cda80a-fef7-11e4-8f0f-002522cb006e-0006007607",  # 该份打印文件的唯一ID
+    "doc_print": {  # 该份文件的打印信息
+        "user": "Diao Chan"  # 文件打印领用人的姓名
+        "time": "2015-05-21, 10:05:22", # 文件打印时间
+        "operator": "John Smith, 0150"  # 打印经办人的姓名, 工号
+    },
+    "index": {  # 文件特征值
+        "template": 100001,  # 公司文件模板编号
+        "id": "0656565600",  # 存储编号(比如原纸质文件的合同号)
+        "user": "王泽华",  # 用户姓名
+        "time": "2014-08-11, 12:00:00",  # 文件有效起始日期
+        "operator": "Tom Hacks, 0001"  # 经办人的姓名, 工号
+    },
     "document": {
-        "type": "XXX合同",  # 文件类型
-        "head": "标题YYYYYYYYYY",
-        "body": [  # 文件正文全文内容或正文关键字列表
-            "Hell Wall",
-            "Everyone dislike GFW(Great FireWall)."
+        "head": "城市供用水合同",  # 文件标题
+        "distinct": "斑竹园",  # 管理区域
+        "body": [  # 正文关键字填表, 按实际文件中从左到右，从上到下的顺序
+            "丰收小区", "", "3", "3", "502", "户外", "产权范围",
+            "生活",
+            "DN20", "4", "壹",
+            "机械", "06007607",
+            "1.90",
+            "", "", "", "", "", "", "", "2",
+            ""
         ],
-        "signature": "7e8789c0615aa6cefe9c5ba871eaed1ea5dc12d22d68d5ff8f0e15b2848375cf"  # 手写签名的图片检索id
-        "signature": !!binary |
-            R0lGODlhDAAMAIQAAP//9/X
-            17unp5WZmZgAAAOfn515eXv
-            Pz7Y6OjuDg4J+fn5OTk6enp
-            z76OjJ+fn5OT=3enp
-        },
-    "print_info": {  # 该份文件的打印信息
-        "time": "2015年03月30日 10:05:22", # 文件打印时间
-        "operator": "John Smith, 0150"  # 打印经办人的姓名和工号
-        }
+        "sign": [  # 文件手写签名
+            {
+                "role": "user",
+                "text": "王泽华",  # 签名文本信息
+                # 手写签名图片hash校验码(在文档数据库里的检索ID) 
+                "img_hash": 0x83aa929a39f97683c36295ce5cf29c22fc384d75d1a6a50c0c853aab8497b319,
+                "img_base64": !!binary |  # 手写签字的 "*.gif" 图片文件(按Base64编码存储)
+                    17unp5WZmZgAAAOfn515eXv
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    17unp5WZmZgAAAOfn515eXv
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    17unp5WZmZgAAAOfn515eXv
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    17unp5WZmZgAAAOfn515eXv
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    z76OjJ+fn5OT=3enp
+            },
+            {
+                "role": "legal_repr",  # 法定代表人
+                "text": ""
+            },
+            {
+                "role": "auth_agent",  # 委托代理人
+                "text": "肖会泽",
+                "image_hash": 0x83aa929a39f97683c36295ce5cf29c22fc384d75d1a6a50c0c853aab8497b319,
+                "image_base64": !!binary |  # 手写签字的 "*.gif" 图片文件(按Base64编码存储)
+                    17unp5WZmZgAAAOfn515eXv
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    17unp5WZmZgAAAOfn515eXv
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    17unp5WZmZgAAAOfn515eXv
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    17unp5WZmZgAAAOfn515eXv
+                    Pz7Y6OjuDg4J+fn5OTk6enp
+                    z76OjJ+fn5OT=3enp
+            },
+            {
+                "user_phone": [  # 用户联系电话
+                    "15928050010",
+                    "02880001001"
+                ]
+            }
+        ],
+        # 文件附件, 其中的扫描图片经过Base64编码后在文档数据库里集中保存, 通过sha256检索
+        "attach": [
+            {
+                "image_name": "身份证复印件",
+                "image_hash": [
+                    0xc03cea027b4b40e4402fabd08557736727ec3d5bc54ad64ab6472de432198cad
+                ]
+            },
+            {
+                "image_name": "房屋移交接受单",
+                "image_hash": [
+                    0xc6224819423d6831afe79095973fc3f8e99c54adc570745bfd8566f2da54ea6d           
+                ]
+            }
+        ]
+    }
 }

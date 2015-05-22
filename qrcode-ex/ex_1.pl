@@ -4,7 +4,6 @@
 
 use Modern::Perl;
 use warnings;
-use autodie;
 
 use Crypt::Digest::SHA256;
 use Imager::QRCode;
@@ -15,7 +14,7 @@ my $d = Crypt::Digest::SHA256->new;
 $d->addfile($frh);    # input the document
 my $dhash = join '',
   ( "http://192.168.0.120:8080/doc/check?id=", $d->hexdigest );
-
+print $dhash, "\n";
 my $qrcode = Imager::QRCode->new(
     size          => 4,
     margin        => 3,
